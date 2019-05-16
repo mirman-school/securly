@@ -15,7 +15,7 @@ sed -i ".bak" "s/com.github.munki/org.mirman/" build-info.plist
 sed -i ".bak" "s/<string>1.0/<string>$(cat ../version)/" build-info.plist
 sed -i ".bak" "s/\${version}/$(cat ../version)/" build-info.plist
 munkipkg ./
-cd $UNINSTALL_DIR
+cd ../$UNINSTALL_DIR
 sed -i ".bak" "s/com.github.munki/org.mirman/" build-info.plist
 sed -i ".bak" "s/<string>1.0/<string>$(cat ../version)/" build-info.plist
 sed -i ".bak" "s/\${version}/$(cat ../version)/" build-info.plist
