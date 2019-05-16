@@ -1,0 +1,10 @@
+#!/bin/bash
+
+networksetup -listallnetworkservices | sed 1d $file | while read adapter
+do
+    networksetup -setdnsservers "$adapter" empty
+    networksetup -setv6off "$adapter"
+done
+dscacheutil -flushcache
+killall -HUP -mDNSResponder
+exit 0
